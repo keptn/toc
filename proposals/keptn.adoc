@@ -8,8 +8,8 @@ Keptn is a control plane for continuous delivery and operations providing
 a declarative approach towards day 1 to day n operations of cloud-native
 applications.
 
-Keptn is built based on the framework used internally at Dynatrace which allows
-us to run hundreds of production cluster without a dedicated operations team in
+Keptn is built inspired by the framework used internally at Dynatrace which allows
+us to run hundreds of production clusters without a dedicated operations team in
 a fully automated "NoOps" approach.
 
 Keptn solves the problem that traditional release pipelines are stitched together
@@ -19,9 +19,9 @@ are integrated. The current approach of building toolchains comes with a number
 of problems:
 
 * Integrations are hard to maintain as they are spread across the entire
-infrastructure
+infrastructure.
 * Onboarding a new service results in a lot of manual work for pipeline and
-operations automation definition
+operations automation definition.
 * Most toolchains today make it hard to define enterprise-wide best practices
 for application delivery that can simply be applied across different
 applications.
@@ -30,10 +30,10 @@ Keptn solves these problems by providing a configurable control plane to define
 day 1 to day n operations. The design is inspired by SDN stacks:
 
 * The application stack defines how the delivery and operations process should
-work using a shipyard file. Shipyard files define stages, release strategies,
+work using a _shipyard file_. Shipyard files define stages, release strategies,
 testing strategies, etc.
-* Keptn than provides a control plane that manages a GitOps repository for the
-stages defined in the shipyard file as well as managing Kubernetes namespaces
+* Keptn then provides a control plane that manages a GitOps repository for the
+stages defined in the _shipyard file_ as well as managing Kubernetes namespaces
 and yaml files for services. Additionally, keptn uses a set of well-defined
 lifecycle events for each potential event that services can subscribe to. All
 events are defined as cloud events.
@@ -44,8 +44,8 @@ configuration which tools to use is defined in a keptn uniform file.
 The approach of keptn has a number of advantages over traditional delivery pipelines and operation automation stacks:
 
 * The behavior of a delivery and automation workflow can be easily changed and
-is managed in a central place.
-* Using shipyard and uniform files the "how" is decoupled from the "what" which
+is managed in a central repository.
+* Using shipyard and uniform files decouples the "how" is  from the "what" which
 enables greater flexibility in defining operational procedures.
 * The declarative approach allows to even change automation at runtime without
 any need for manual reconfiguration or touching tool integrations.
@@ -54,7 +54,7 @@ In the current version keptn focused on three major use cases for day 1 and day
 2 operations:
 
 * Declarative multistage delivery pipelines with automated quality gates.
-Uniform files allow creating any multi-stage pipeline including defining the
+_Uniform files_ allow creating any multi-stage pipeline including defining the
 deployment strategy (e.g. direct, blue/green) and definition of testing strategy
 for propagation.
 * Deployment-based self-healing by automatically rolling back blue/green
@@ -77,7 +77,7 @@ level using a declarative approach to delivery and operations.
 Keptn also builds on top of exiting CNCF projects:
 
 - Kubernetes is used as the core runtime and deployment platform
-- Istio and Envoy are used for traffic routing and deployment strategies (blue/green,
+- Envoy - and currently Istio - are used for traffic routing and deployment strategies (blue/green,
 canary)
 - Prometheus is used as a monitoring source
 - Helm is used for deployment definition
@@ -85,21 +85,26 @@ canary)
 
 *Roadmap:*
 
-* May 2019 - v 0.2.5. Latest version of Keptn providing all core functionality
-to support key use cases. First version of keptn's bridge UI. 
-* September 2019 - v 0.3.0. Improved version of keptn's brige UI. Infrastructure fully upgraded to
-latest version of knative. Removal of Third Party tooling dependency (Jenkins, ...). Keptn
-operator. Improved uniform support with first version of uniform hub. 
-* December 2019 - v 0.4.0. Support for multi-cluster deployment. Improved
-supporte across multiple Kubernetes distributions.
-* June 2020 - planned v 1.0 release. This is the planned releases date for the
-first version that has been hardened after multiple production deployments in
-different settings.
+* *March 2020 - v 0.6.1.* Latest version of Keptn supporting all core use cases
+for delivery and operation automation. Quality Gates based on
+SLIs/SLOs for differnt providers. Compatible with all major Kubernetes
+distributions and used in 5+ production installations.  
+
+* *Mai/June 2020 - v 0.7.0.* Improved GitOps-based Self-Healing support. Support
+for manual approval workflows and cloud-native "release brackets". More UI
+capabilities including release management and basic access control management. 
+
+* *September 2020 - v 0.8.0.* Next generation lightweight choreography engine.
+Ability to install delivery and control plane separately. Easy way to install
+new services from online sources.
+
+* *December 2020 - v 1.0.0.* Fully production ready version of Keptn used in a
+large number of deployments.
 
 
 *Sponsors from TOC:* 
 
-No sponsors yet.
+Will reach out via the mailing list
 
 *Preferred maturity level:* Sandbox
 
